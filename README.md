@@ -1,5 +1,5 @@
-# People Service
+# Cat Service
 
-A service to serve information about people. 
+A service to serve information about cats. 
 
 
