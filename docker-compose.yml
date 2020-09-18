@@ -1,0 +1,59 @@
+version: '3.7'
+
+services:
+  cat-service:
+    build: docker/cat-service
+    environment:
+      KOJO_REDIS_PORT: 6379
+      KOJO_REDIS_HOST: "redis"
+      REDIS_PORT: 6379
+      REDIS_HOST: "redis"
+      DATABASE_USERNAME: "user"
+      DATABASE_PASSWORD: "password"
+      DATABASE_ADAPTER: "pgsql"
+      DATABASE_HOST: "postgres"
+      DATABASE_NAME: "cat_service"
+      DATABASE_PORT: "5432"
+    restart: always
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - 9040
+      - 9000
+    volumes:
+      - ../CatService:/var/www/html/cat-service
+      # Shares AWS credentials to the docker container
+      - $HOME/.aws:/root/.aws
+      - $HOME/.aws:/var/www/.aws
+  nginx:
+    build:
+      context: docker/nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ../CatService:/var/www/html/cat-service
+      - ./Logs/nginx/:/var/log/nginx
+      - ./docker/nginx/sites/:/etc/nginx/sites-available
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - cat-service
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+volumes:
+  postgres:
