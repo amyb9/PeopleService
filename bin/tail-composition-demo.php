@@ -11,8 +11,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $cat = new Cat();
 $tail = new Tail();
+$catRepository = new Cat\Repository();
 
 $cat->setTail($tail);
 $tail->setLengthInInches(7);
+$catRepository->add($cat);
 
 return;

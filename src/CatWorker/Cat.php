@@ -10,12 +10,6 @@ class Cat implements CatInterface
     private string $eyeColor;
     private TailInterface $tail;
 
-    public function meow(): CatInterface
-    {
-        echo "meow world!\n";
-        return $this;
-    }
-
     public function setEyeColor(string $eyeColor): CatInterface
     {
         if (isset($this->eyeColor)) {
