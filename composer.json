@@ -15,6 +15,7 @@
     "ext-json": "*",
     "ext-pdo": "*",
     "neighborhoods/buphalo": "^1.1",
+    "neighborhoods/prefab": "dev-feature/container_only",
     "neighborhoods/exception-component": "^1",
     "neighborhoods/kojo": "5.2.*",
     "fzaninotto/faker": "^1.9",
