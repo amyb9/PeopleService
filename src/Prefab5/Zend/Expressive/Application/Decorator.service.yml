@@ -1,0 +1,6 @@
+services:
+  Amyb9\CatService\Prefab5\Zend\Expressive\Application\DecoratorInterface:
+    class: Amyb9\CatService\Prefab5\Zend\Expressive\Application\Decorator
+    decorates: Zend\Expressive\Application
+    calls:
+    - [setZendExpressiveApplication, ['@Amyb9\CatService\Prefab5\Zend\Expressive\Application\DecoratorInterface.inner']]

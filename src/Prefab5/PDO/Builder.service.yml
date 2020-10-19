@@ -1,0 +1,21 @@
+parameters:
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_user_name: '%env(DATABASE_USERNAME)%'
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_password: '%env(DATABASE_PASSWORD)%'
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_adapter: '%env(DATABASE_ADAPTER)%'
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_host: '%env(DATABASE_HOST)%'
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_name: '%env(DATABASE_NAME)%'
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface.options:
+    !php/const \PDO::ATTR_PERSISTENT: true
+    !php/const \PDO::ATTR_EMULATE_PREPARES: false
+services:
+  Amyb9\CatService\Prefab5\PDO\BuilderInterface:
+    class: Amyb9\CatService\Prefab5\PDO\Builder
+    shared: false
+    calls:
+    - [setOpcacheDNS, ['@Amyb9\CatService\Prefab5\Opcache\DNSInterface']]
+    - [setOptions, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.options%']]
+    - [setPassword, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_password%']]
+    - [setUserName, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_user_name%']]
+    - [setDatabaseAdapter, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_adapter%']]
+    - [setDatabaseHost, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_host%']]
+    - [setDatabaseName, ['%Amyb9\CatService\Prefab5\PDO\BuilderInterface.database_name%']]

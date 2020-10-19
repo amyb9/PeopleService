@@ -1,0 +1,6 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\Doctrine\DBAL\Query\QueryBuilder\VisitorInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\Doctrine\DBAL\Query\QueryBuilder\Visitor
+    calls:
+    - [setDoctrineDBALConnectionDecoratorRepository, ['@Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\RepositoryInterface']]
+    shared: false

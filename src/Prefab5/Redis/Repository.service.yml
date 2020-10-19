@@ -1,0 +1,8 @@
+services:
+  Amyb9\CatService\Prefab5\Redis\RepositoryInterface:
+    class: Amyb9\CatService\Prefab5\Redis\Repository
+    public: false
+    shared: true
+    calls:
+      - [setRedisFactory, ['@Amyb9\CatService\Prefab5\Redis\FactoryInterface']]
+      - [setRedisMap, ['@Amyb9\CatService\Prefab5\Redis\MapInterface']]

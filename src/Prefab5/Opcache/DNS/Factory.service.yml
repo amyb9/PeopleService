@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\Opcache\DNS\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\Opcache\DNS\Factory
+    calls:
+    - [setOpcacheDNS, ['@Amyb9\CatService\Prefab5\Opcache\DNSInterface']]

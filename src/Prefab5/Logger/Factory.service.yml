@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\Logger\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\Logger\Factory
+    calls:
+      - [setPrefab5Logger, ['@Amyb9\CatService\Prefab5\LoggerInterface']]

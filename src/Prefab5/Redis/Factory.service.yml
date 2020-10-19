@@ -1,0 +1,14 @@
+parameters:
+  redis_port_default_value: null
+  redis_host_default_value: null
+  Amyb9\CatService\Prefab5\Redis\FactoryInterface.redis_port: '%env(default:redis_port_default_value:REDIS_PORT)%'
+  Amyb9\CatService\Prefab5\Redis\FactoryInterface.redis_host: '%env(default:redis_host_default_value:REDIS_HOST)%'
+services:
+  Amyb9\CatService\Prefab5\Redis\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\Redis\Factory
+    public: false
+    shared: true
+    calls:
+      - [addOption, [!php/const \Amyb9\CatService\Prefab5\Redis\FactoryInterface::REDIS_OPT_READ_TIMEOUT, '-1']]
+      - [setHost, ['%Amyb9\CatService\Prefab5\Redis\FactoryInterface.redis_host%']]
+      - [setPort, ['%Amyb9\CatService\Prefab5\Redis\FactoryInterface.redis_port%']]

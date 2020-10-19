@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\Factory
+    calls:
+    - [setSearchCriteria, ['@Amyb9\CatService\Prefab5\SearchCriteriaInterface']]

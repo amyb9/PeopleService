@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\Factory
+    calls:
+    - [setSearchCriteriaSortOrder, ['@Amyb9\CatService\Prefab5\SearchCriteria\SortOrderInterface']]

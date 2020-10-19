@@ -1,0 +1,7 @@
+services:
+  Amyb9\CatService\Prefab5\Zend\ProblemDetails\ProblemDetailsMiddleware\DecoratorInterface:
+    class: Amyb9\CatService\Prefab5\Zend\ProblemDetails\ProblemDetailsMiddleware\Decorator
+    decorates: Zend\ProblemDetails\ProblemDetailsMiddleware
+    calls:
+    - [setZendProblemDetailsProblemDetailsMiddleware, ['@Amyb9\CatService\Prefab5\Zend\ProblemDetails\ProblemDetailsMiddleware\DecoratorInterface.inner']]
+    - [attachListener, ['@Amyb9\CatService\Prefab5\Zend\ProblemDetails\ProblemDetailsMiddleware\NewRelic\ListenerInterface']]

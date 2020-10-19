@@ -1,0 +1,7 @@
+services:
+  Amyb9\CatService\Prefab5\Opcache\DNSInterface:
+    class: Amyb9\CatService\Prefab5\Opcache\DNS
+    calls:
+    - [setNewRelic, ['@Amyb9\CatService\Prefab5\NewRelicInterface']]
+    - [setOpcacheDNSErrorHandler, ['@Amyb9\CatService\Prefab5\Opcache\DNS\ErrorHandlerInterface']]
+    shared: false

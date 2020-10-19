@@ -1,0 +1,9 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteriaInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria
+    calls:
+    - [setSearchCriteriaFilterMapFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\Filter\Map\FactoryInterface']]
+    - [setSearchCriteriaSortOrderMapFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\Map\FactoryInterface']]
+    - [setSearchCriteriaVisitorMapFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\Visitor\Map\FactoryInterface']]
+    - [setSearchCriteriaDoctrineDBALQueryQueryBuilderVisitorFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\Doctrine\DBAL\Query\QueryBuilder\Visitor\FactoryInterface']]
+    shared: false

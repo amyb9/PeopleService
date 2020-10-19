@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\NewRelic\TransactionNameMiddleware\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\NewRelic\TransactionNameMiddleware\Factory
+    calls:
+    - [setNewRelicTransactionNameMiddleware, ['@Amyb9\CatService\Prefab5\NewRelic\TransactionNameMiddlewareInterface']]

@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\Map\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\Map\Factory
+    calls:
+    - [setSearchCriteriaSortOrderMap, ['@Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\MapInterface']]

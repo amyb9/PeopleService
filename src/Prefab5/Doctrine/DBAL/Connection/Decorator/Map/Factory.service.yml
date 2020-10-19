@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\Map\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\Map\Factory
+    calls:
+    - [setDoctrineDBALConnectionDecoratorMap, ['@Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\MapInterface']]

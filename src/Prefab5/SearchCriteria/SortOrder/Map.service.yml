@@ -1,0 +1,4 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\MapInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\Map
+    shared: false

@@ -1,0 +1,4 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\Visitor\MapInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\Visitor\Map
+    shared: false

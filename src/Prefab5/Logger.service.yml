@@ -1,0 +1,3 @@
+services:
+  Amyb9\CatService\Prefab5\LoggerInterface:
+    class: Amyb9\CatService\Prefab5\Logger

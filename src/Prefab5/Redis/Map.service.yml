@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\Redis\MapInterface:
+    class: Amyb9\CatService\Prefab5\Redis\Map
+    public: false
+    shared: false

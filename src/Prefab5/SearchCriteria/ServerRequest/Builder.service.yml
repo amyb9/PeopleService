@@ -1,0 +1,8 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\ServerRequest\BuilderInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\ServerRequest\Builder
+    calls:
+    - [setSearchCriteriaFilterFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\Filter\FactoryInterface']]
+    - [setSearchCriteriaSortOrderFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\SortOrder\FactoryInterface']]
+    - [setSearchCriteriaFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\FactoryInterface']]
+    - [setSearchCriteriaBuilderFactory, ['@Amyb9\CatService\Prefab5\SearchCriteria\Builder\FactoryInterface']]

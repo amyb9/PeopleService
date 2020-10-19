@@ -1,0 +1,7 @@
+services:
+  Amyb9\CatService\Prefab5\PDO\Builder\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\PDO\Builder\Factory
+    public: false
+    shared: true
+    calls:
+      - [setPDOBuilder, ['@Amyb9\CatService\Prefab5\PDO\BuilderInterface']]

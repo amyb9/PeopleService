@@ -1,0 +1,4 @@
+services:
+  Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\MapInterface:
+    class: Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\Map
+    shared: false

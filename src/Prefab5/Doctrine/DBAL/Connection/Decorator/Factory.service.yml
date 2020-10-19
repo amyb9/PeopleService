@@ -1,0 +1,7 @@
+services:
+  Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\Decorator\Factory
+    public: false
+    shared: true
+    calls:
+      - [setDoctrineDBALConnectionDecorator, ['@Amyb9\CatService\Prefab5\Doctrine\DBAL\Connection\DecoratorInterface']]

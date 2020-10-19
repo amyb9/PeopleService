@@ -1,0 +1,5 @@
+services:
+  Amyb9\CatService\Prefab5\SearchCriteria\Visitor\Map\FactoryInterface:
+    class: Amyb9\CatService\Prefab5\SearchCriteria\Visitor\Map\Factory
+    calls:
+    - [setSearchCriteriaVisitorMap, ['@Amyb9\CatService\Prefab5\SearchCriteria\Visitor\MapInterface']]
