@@ -1,0 +1,9 @@
+services:
+  Amyb9\CatService\CatWorker\Cat\BuilderInterface:
+    class: Amyb9\CatService\CatWorker\Cat\Builder
+    public: false
+    shared: false
+    calls:
+      - [setCatWorkerCatFactory, ['@Amyb9\CatService\CatWorker\Cat\FactoryInterface']]
+      - [setCatWorkerTailBuilderFactory, ['@Amyb9\CatService\CatWorker\Tail\Builder\FactoryInterface']]
+      - [setCatWorkerClawBuilderFactory, ['@Amyb9\CatService\CatWorker\Claw\Builder\FactoryInterface']]

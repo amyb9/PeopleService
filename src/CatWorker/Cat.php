@@ -9,6 +9,8 @@ class Cat implements CatInterface
 {
     private string $eyeColor;
     private TailInterface $tail;
+    // Refactor to RightFrontClaw, LeftFrontClaw, BackRightClaw, & BackLeftClaw.
+    private ClawInterface $Claw;
 
     public function setEyeColor(string $eyeColor): CatInterface
     {
@@ -48,5 +50,25 @@ class Cat implements CatInterface
         }
 
         return $this->tail;
+    }
+
+    public function setClaw(ClawInterface $Claw): CatInterface
+    {
+        if (isset($this->Claw)) {
+            throw new LogicException('Claw is already set.');
+        }
+
+        $this->Claw = $Claw;
+
+        return $this;
+    }
+
+    public function getClaw(): ClawInterface
+    {
+        if (!isset($this->Claw)) {
+            throw new LogicException('Claw has not been set.');
+        }
+
+        return $this->Claw;
     }
 }

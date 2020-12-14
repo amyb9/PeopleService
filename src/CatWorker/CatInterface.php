@@ -12,4 +12,8 @@ interface CatInterface
     public function getTail(): TailInterface;
 
     public function setTail(TailInterface $tail): CatInterface;
+
+    public function getClaw(): ClawInterface;
+
+    public function setClaw(ClawInterface $Claw): CatInterface;
 }
