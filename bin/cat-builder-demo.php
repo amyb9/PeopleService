@@ -10,7 +10,7 @@ use Amyb9\CatService\Prefab5\Opcache\DNS\ErrorHandler;
 use Psr\Container\ContainerInterface;
 
 // Setup PHP to be strict, autoload, etc.
-bootstrap();;
+bootstrap();
 // Get a fully built Dependency Injection Container.
 $dependencyInjectionContainer = getContainer();
 
